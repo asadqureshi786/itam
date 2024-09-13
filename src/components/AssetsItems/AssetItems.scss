@@ -1,0 +1,47 @@
+@import '../../css/assets.scss';
+
+.asset_items{
+    .items{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 8px;
+        border:1px solid $card_border;
+        padding: 20px;
+        .image_box{
+            background: white;
+            border-radius: 12px;
+            @include flex-center;
+            margin-bottom: 10px;
+            width: 130px;
+            height: 130px;
+            img{
+                width: 100px;
+                height: 100%;
+            }
+        }
+        .name{
+            font-size: 15px;
+        }
+        .tag{
+            font-size: 14px;
+        }
+        .item_footer{
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 10px;
+            .btn{
+                width: 100%;
+                padding:4px 13px 5px 13px;
+                &.cancel{
+                    background-color: transparent!important;
+                    color:#455468!important;
+                    border:0px!important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,93 @@
+@import './assets.scss';
+.setting_page_section{
+    .setting_divide{
+        display: grid;
+        grid-template-columns:1fr 4fr;
+        & > div{
+            padding:20px;
+        }
+        .tab_section{
+            border:1px solid $card_border;
+            background-color: $input_background;
+            nav{
+                .nav-tabs{
+                    border:0px;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    .nav-link{
+                        text-align: left;
+                        background: transparent;
+                        color:#8897AE;
+                        display: flex;
+                        align-items: center;
+                        padding: 10px 10px;
+                        border-radius: 4px;
+                        gap: 10px;
+                        border: 0px;
+                        font-size: 15px;
+                        font-weight: 400;
+                        color:#8897AE;
+                        margin-bottom: 5px;
+                        svg{
+                            fill:#8897AE;
+                            stroke:#8897AE;
+                            font-size: 21px;
+                            width: 20px;
+                            height: 20px;
+                        }
+                        &.active{
+                            background-color: #2B3241;
+                            font-weight: 400;
+                            color:white;
+                            svg{
+                                color:white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .security_settings{
+            .forgotPassword{
+                color:#1B4DFF;
+                // border-bottom: 1px solid #1B4DFF;
+                width: fit-content;
+            }
+            .eye{
+                position: absolute;
+                top:73%;
+                right: 10px;
+                transform: translateY(-50%);
+                cursor: pointer;
+                svg{
+                    color:$light_color1;
+                }
+            }
+            ._rules{
+                .text{
+                    color:$light_color;
+                    font-size: 14px;
+                    &.big_b{
+                        font-size: 15px;
+                        display: flex;
+                        align-items: center;
+                        gap:5px;
+                        color: $light_color;
+                    }
+                }
+                .points{
+                    padding-left: 20px;
+                    padding-top:10px;
+                }
+            }
+        }
+
+    }
+    #custom_fields{
+        th{
+            padding-top:18px!important;
+            padding-bottom:18px!important;
+        }
+    }
+}

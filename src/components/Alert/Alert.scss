@@ -1,0 +1,68 @@
+@import '../../css/assets.scss';
+
+.swal2-container {
+    .swal2-modal {
+        background: $card_bg;
+        border: 1px solid $card_border;
+        border-radius: 8px;
+    }
+
+    .btn {
+        font-size: 14px;
+        width: 100%;
+        height: fit-content;
+        padding: 7px 10px;
+
+        &.update {
+            color: white;
+            border: 1px solid $primary_color;
+            background-color: $primary_color;
+        }
+
+        &.cancel {
+            color: $light_color;
+            border: 1px solid $card_border;
+            background-color: rgba(15, 16, 19, 1);
+        }
+
+        &.delete {
+            color: red;
+            border-right: 2px solid $card_border;
+            background-color: rgba(15, 16, 19, 1);
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        &.danger {
+            color: white;
+            border: 1px solid #E92215;
+            background-color: #E92215;
+        }
+    }
+    .swal2-title,
+    .swal2-html-container{
+        text-align: left;
+    }
+    .swal2-title{
+        font-size: 22px;
+    }
+    .swal2-html-container{
+        font-size: 15px;
+        color:$light_color!important;
+    }
+    .swal2-actions{
+        display: none!important;
+    }
+    .swal2-footer{
+        border:none!important
+    }
+    .icon{
+        border: 1px solid #E92215;
+        border-radius: 6px;
+        padding: 8px;
+        width: fit-content;
+        height: fit-content;
+        line-height: unset;  
+        margin-bottom: 10px;  
+    }
+}

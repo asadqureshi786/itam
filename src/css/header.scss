@@ -1,0 +1,99 @@
+@import './assets.scss';
+header{
+    background:$card_bg;
+    background-color: $card_bg;
+    border-bottom:1px solid #2B3241;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    margin-left: 290px;
+    z-index:1;
+    .header_search{
+        top:50%;
+        transform: translateY(-50%);
+        left:10px;
+    }
+    .custom_form{
+        .form-groups{
+            .form-control{
+                padding-left: 40px!important;
+                border:none;
+                background: #16181D!important;
+            }
+        }
+    }
+    .dropdown{
+        .btn{
+            padding:0px;
+            border:none;
+            background: transparent;
+            &::after{
+                content:none!important;
+            }
+        }
+        .dropdown-menu{
+            background: $card_bg;
+            border: 1px solid $card_border;
+            border-radius: 8px;
+            min-width: 300px;
+            .head{
+                color:white;
+                border-bottom: 1px solid $card_border;
+                padding: 5px 10px 15px 10px;
+                font-size: 18px;            
+            }
+            .main_content{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                margin: 10px 0px;
+            }
+            .dropdown-item{
+                &:hover{
+                 background-color:$card_bg;   
+                }
+                img{
+                    width:35px;
+                    height:35px;
+                    border-radius:100px;
+                }
+                display: flex;
+                gap:10px;
+                align-items:center;
+                .text{
+                    color:white;
+                    font-size: 13px;
+                    display: flex;
+                    font-weight: 600;
+                    flex-direction: column;
+                }
+                .n_text{
+                    color:#8897AE;
+                    font-weight: 400;
+                    font-size:13px;
+                }
+            }
+        }
+    }
+    .notification{
+        position: relative;
+        svg{
+            font-size: 26px;
+            color:white;
+        }
+        .switch_icon{
+            position: absolute;
+            top:-5px;
+            right:-5px;
+            width: 10px;
+            height:10px;
+            border-radius: 100px;
+            background: red;
+        }
+    }
+}

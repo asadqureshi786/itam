@@ -1,0 +1,211 @@
+@import '../../css/assets.scss';
+ul{
+    padding: 0px;
+    margin: 0px;
+}
+.ticketViewChat{
+    
+    .divide_column{
+        display: grid;
+        grid-template-columns: 5fr 2fr;
+        .head{
+            border-bottom: 1px solid #455468;
+            padding-bottom: 10px;
+            .hd{
+                font-size: 18px;
+                color:white;
+            }
+            .sub_text{
+                color:$light_color;
+            }
+        }
+        .chat_body{
+            .content_body{
+                margin: 10px 0px;
+                padding:25px 20px;
+                border-bottom: 1px solid #2B3241;
+                margin-bottom: 20px;
+                height:calc(100vh - 335px);
+                overflow-y: scroll;
+                &::-webkit-scrollbar {
+                    width: 4px;
+                  }
+                    &::-webkit-scrollbar-track {
+                    background: $card_bg; 
+                  }
+                    &::-webkit-scrollbar-thumb {
+                    background: $card_border; 
+                      border-radius:10px;
+                  }
+                li:last-child{
+                    margin-bottom: 0px;
+                }
+                .user_message{
+                    display: flex;
+                    gap: 12px;
+                    margin-bottom: 10px;
+                    .profile_image{
+                        background-repeat: no-repeat!important;
+                        background-size: cover!important;
+                        width: 42px;
+                        height: 42px;
+                        border-radius: 4px;
+                    }
+                    .messages{
+                        ul{
+                            .message_item{
+                                font-size: 14px;
+                                padding: 10px 13px 12px 13px;
+                                border-radius: 4px;
+                                margin-bottom: 8px;
+                                width: fit-content;
+                                color:white;
+                                list-style: none;
+                            }
+                            li:last-child{
+                                margin-bottom: 0px;
+                            }
+                        }
+                    }
+                    &.left_side{
+                         .messages{
+                             ul{
+                                .message_item{
+                                 background: $input_background;
+                                 border: 1px solid $input_border;
+                                }
+                            }
+                         }
+                    }
+                    &.right_side{
+                        justify-content: end;
+                        flex-direction: row-reverse;
+                         .messages{
+                             ul{
+                                display: flex;
+                                flex-direction: column;
+                                align-items: end;                            
+                                .message_item{
+                                 background: #1B4DFF;
+                                 border: 1px solid #1B4DFF;
+                                 color:white;
+                                }
+                            }
+                         }
+                    }
+                }
+            }
+            .chat_footer{
+                .form-groups{
+                    position: relative;
+                    textarea{
+                        padding:20px 55px 0px 60px;
+                    }
+                    .url_link{
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 10px;
+                        background: #2B3241;
+                        border-radius: 8px;
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img{
+                            width: 20px;
+                        }
+                    }
+                    .btn{
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right:10px;
+                    }
+                }   
+            }
+        }
+        .user_info{
+            padding:16px;
+            .user_detail_card{
+                margin-top: 20px;
+                padding-bottom: 20px;
+                margin-bottom: 25px;
+                background: $card_bg;
+                border-radius: 12px;
+                border:1px solid $card_border;
+                padding:20px;
+                ul{
+                    padding: 0px;
+                    margin: 0px;
+                    li{
+                        padding: 0px;
+                        margin: 0px;
+                        margin-bottom: 10px;
+                        .text{
+                            font-size: 14px;
+                        }
+                        &:last-child{
+                            margin-bottom: 0px;
+                        }
+                        .link{
+                            color:#466EFF;
+                            border-bottom: 1px solid #466EFF;
+                            width: fit-content;
+                            text-decoration: none;
+                        }
+                        .bold{
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+            .tags{
+                .status{
+                    .css-13cymwt-control{
+                        background: #454135 !important;
+                        opacity: 1;
+                    }
+                    .css-1jqq78o-placeholder{
+                        color:#D8A800!important;
+                        font-size:14px;
+                    }
+                    .css-1dimb5e-singleValue{
+                        color:#D8A800!important;
+                        font-size:14px;
+                    }
+                    svg{
+                        color:rgb(216, 168, 0) !important
+                    }
+                }
+                .assigned{
+                    .css-13cymwt-control{
+                        background: transparent !important;
+                        opacity: 1;
+                    }
+                    .css-1jqq78o-placeholder{
+                        color:#D8A800!important;
+                        font-size:14px;
+                    }
+                    .css-1dimb5e-singleValue{
+                        color:#D8A800!important;
+                        font-size:14px;
+                    }
+                    svg{
+                        color:#5E718D !important
+                    }
+                    .css-1p3m7a8-multiValue{
+                        border:1px solid $input_border;
+                        border-radius: 4px;
+                    }
+                    .css-1p3m7a8-multiValue {
+                        background-color: transparent!important;
+                    }
+                    .css-9jq23d{
+                        color:#5E718D;
+                    }
+                }
+            }
+        }
+    }
+}

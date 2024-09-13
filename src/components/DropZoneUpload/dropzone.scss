@@ -1,0 +1,26 @@
+@import '../../css/assets.scss';
+.dorp_zone_upload{
+    .dropzone{
+        border:1px dashed #042185;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        background: $input_background;
+        justify-content: center;
+        flex-direction: column;
+        .text{
+            color:white;
+            font-size: 15px;
+            &.light{
+                font-size: 14px;
+                color:$light_color
+            }
+        }
+        .darkName{
+            color:#3966ff!important;
+        }
+        .big{
+            font-weight: 600;
+        }
+    }
+}

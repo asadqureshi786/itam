@@ -1,0 +1,82 @@
+// Mixin Variable Start
+@mixin flex-center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+// Mixin Variable End
+
+// Sass Variable
+$primary_color:#1B4DFF;
+$card_bg:#101217;
+$card_border:#2B3241;
+$light_color:#8897AE;
+$light_color1:#5E718D;
+$input_background:rgb(24 24 24);
+$input_border:rgba(43, 50, 65, 1);
+
+
+
+// Predefined Classes
+.primary_color{
+    color:$primary_color;
+}
+.card_bgc{
+    background-color:#101217;
+}
+.card_bg{
+    background-color:#101217;
+}
+.card_border{
+    border:1px solid $card_border;
+}
+.light_color{
+    color:$light_color!important;
+}
+.f-15{
+    font-size: 15px;
+}
+.text-white{
+    color:#fff;
+}
+
+
+// Remove Padding And Margin
+h1,h2,h3,h4,h5,h6,p{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+
+.btn{
+    font-size: 14px;
+    width: fit-content;
+    padding: 6px 13px 7px 13px;
+    &.update{
+        color: white;
+        border: 1px solid $primary_color;
+        background-color: $primary_color;
+    }
+    &.cancel{
+        color:$light_color;
+        border:1px solid $card_border;
+        background-color:rgba(15, 16, 19, 1);
+    }
+    &.delete{
+        color:red;
+        border-right:2px solid $card_border;
+        background-color:rgba(15, 16, 19, 1);
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    &.light_blue{
+        color:rgba(27, 77, 255, 1);
+        border:1px solid rgba(27, 77, 255, 0.15);
+        background-color:rgba(27, 77, 255, 0.15);
+    }
+    &.full_blue{
+        background-color:rgba(27, 77, 255, 1) ;
+        color:white;
+        border:1px solid rgba(27, 77, 255, 1);
+    }
+}
