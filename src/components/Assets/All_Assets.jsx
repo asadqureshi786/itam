@@ -80,7 +80,7 @@ export default function All_Assets(){
             <p className="light_1 small m-0 p-0">Warwick, RI 02886</p>
           </div>
         ),
-        action: <div className="e_action  checkIn dynamic_col">Check IN</div>,
+        action: <div className="e_action  checkIn dynamic_col">Check in</div>,
         status: <div className="e_status assigned dynamic_col ">Assigned</div>,
         actions: <ActionDropdown view_href="#" edit_href="#" delete_href="#" />,
       },
@@ -123,7 +123,7 @@ export default function All_Assets(){
             <p className="light_1 small m-0 p-0">Warwick, RI 02886</p>
           </div>
         ),
-        action: <div className="e_action  checkOut dynamic_col">Check Out</div>,
+        action: <div className="e_action  checkOut dynamic_col">Check out</div>,
         status: <div className="e_status available dynamic_col ">Available</div>,
         actions: <ActionDropdown view_href="#" edit_href="#" delete_href="#" />,
       },

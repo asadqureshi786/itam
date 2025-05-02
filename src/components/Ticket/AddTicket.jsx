@@ -31,7 +31,18 @@ export default function AddAdditionalFields(props, args) {
             <Form action="">
               <div className="custom_form">
                 <Row>
-                    <Col md="12">
+                <Col md="4">
+                      <FormGroup className="form-groups">
+                        <Label className="d-flex align-items-center gap-1" htmlFor="">ID 
+                           </Label>
+                        <div className="procurement_link d-flex align-items-center gap-3">
+                          <input type="text" disabled value="#32423"  className="form-control" />
+                        </div>
+                           <span><small className="text-white position-relative bottom-0" >A unique ID will be automatically generated</small></span>
+                         
+                      </FormGroup>
+                    </Col>
+                    <Col md="8">
                       <FormGroup className="form-groups">
                         <Label htmlFor="">Device Name</Label>
                         <div className="procurement_link d-flex align-items-center gap-3">
@@ -39,20 +50,34 @@ export default function AddAdditionalFields(props, args) {
                         </div>
                       </FormGroup>
                     </Col>
-                    <Col md="6">
+                    <Col md="4">
                       <FormGroup className="form-groups">
                         <Label htmlFor="">Type</Label>
                         <select name="" id="" className="form-control">
-                            <option value="">Repair</option>
+                            <option value="">Procurement</option>
+                            <option value="">Maintenance</option>
+                            <option value="">Incident</option>
                         </select> 
                       </FormGroup>
                     </Col>
-                    <Col md="6">
+                    <Col md="4">
                       <FormGroup className="form-groups">
                         <Label htmlFor="">Status</Label>
                         <select name="" id="" className="form-control">
-                            <option value="">Open</option>
-                            <option value="">Close</option>
+                        <option value="">Open</option>
+                            <option value="">In Progress</option>
+                            <option value="">Resolved</option>
+                            <option value="">Closed</option>
+                        </select> 
+                      </FormGroup>
+                    </Col>
+                    <Col md="4">
+                      <FormGroup className="form-groups">
+                        <Label htmlFor="">Priority</Label>
+                        <select name="" id="" className="form-control">
+                        <option value="">High</option>
+                            <option value="">Medium</option>
+                            <option value="">Low</option>
                         </select> 
                       </FormGroup>
                     </Col>

@@ -137,6 +137,12 @@ export default function Add_Asset(){
                                 <div className="custom_form">
                                     <h6 className="heading">Product Details</h6>
                                     <Row>
+                                    <Col md="12">
+                                            <FormGroup className="form-groups">
+                                                <Label htmlFor="">Search</Label>
+                                                <Input type="text" className='form-control'  />
+                                            </FormGroup>
+                                        </Col>
                                         <Col md="6">
                                             <FormGroup className="form-groups">
                                                 <Label htmlFor="">Asset Type</Label>

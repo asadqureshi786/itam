@@ -65,6 +65,7 @@ p{
 }
 // Modal SASS End
 
+
 // Form Fields SASS Start
 
 .css-13cymwt-control{
@@ -410,15 +411,115 @@ p{
                 color:white;
                 .icon{
                     border:2px solid $card_border;
-                    border-radius: 8px;
+                    border-radius: 4px;
                     display: flex;
                     align-items: center;
                     gap:10px;
                     background: #16181D;
                     padding:10px;
+                    position:relative;
                     img{
                         width: 30px;
                         height: 100%;
+                    }
+                    .icon_abs_img{
+                        color: transparent;
+                        position: absolute;
+                        bottom: -18px;
+                        width: 100px;
+                        height: 100%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        transition: 0.2s all linear;
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+                }
+                .link_icon{
+                    background: #00000040;
+                    border-radius:100px;
+                    width:40px;
+                    height:40px;
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    position:relative;
+                    z-index:10;
+                    transition: 0.2s all linear;
+                    visibility: hidden;
+                    opacity: 0;
+                }
+            }
+            .card{
+                transition: 0.2s all linear;
+                cursor: pointer;
+                overflow: hidden;
+                .right_bottom{
+                    transition: 0.2s all linear;
+                    visibility: hidden;
+                    opacity: 0;
+                    color: transparent;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 60%;
+                    height: 100%;
+                }
+                &:hover{
+                    border:1px solid #0024a6!important;
+                    .right_bottom{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                    .link_icon{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+                &:hover{
+                    .icon{
+                        border:2px solid #0024a6!important;
+                    }
+                    .icon_abs_img{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+            &.assets{
+                .boxes{
+                    gap:0px;
+                }
+                .nav{
+                    display: flex;
+                    justify-content: left;
+                    gap: 10px;
+                    .nav-item{
+                        .nav-link{
+                            padding:0px;
+                            border:0px;
+                            &.active{
+                                border:0px;
+                                .card{
+                                    border:1px solid #0024a6!important;
+                                }
+                                .icon{
+                                    border:2px solid #0024a6!important;
+                                }
+                                .icon_abs_img{
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
+                                .right_bottom{
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
+                                .link_icon{
+                                    opacity: 1;
+                                    visibility: visible;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -785,6 +886,63 @@ hr{
 }
 // Procurement Side Canvas SASS 
 
+
+
+// Auth Spinner SASS Start
+.auth_spinner{
+    display: flex!important;
+    font-weight: 400!important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+    padding: 10px!important;
+    .spinner-border{
+        --bs-spinner-width: 18px;
+        --bs-spinner-height: 18px;
+        --bs-spinner-border-width: 2px;
+    }
+}
+.not_match{
+    color: #cc0000;
+    font-size: 13px;
+    font-weight: 400;
+}
+// Auth Spinner SASS End
+
+
+// Reports Page SASS Start
+.reports_page{
+    .empty{
+        height:calc(100vh - 100px)!important;
+        .card-body{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .box{
+                display: flex;
+                justify-content: center;
+                gap:10px;
+                flex-direction: column;
+                align-items: center;
+                img{
+                    width: 250px;
+                    height:100%; 
+                }
+            }
+            .text{
+                color:#8897AE!important;
+                &.heading{
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+// Reports Page SASS End
+
+
 @media only screen and (min-width:786px) {
     .asset_management{
         .first_col{
@@ -804,7 +962,146 @@ hr{
 
 }
 
+.change_tab{
+    flex-wrap: nowrap!important;
+    li{
+        width: 100%;
+    }
+}
 
+// Tracking SASS Start
+.tracking_img{
+    margin:0 auto;
+    width:100%;
+}
+.tracking_packages{
+    .head{
+        display: flex;
+        align-items: start;
+        gap:10px;
+        .box{
+            border: 2px solid transparent;
+            border-image-source: linear-gradient(180deg, rgba(16, 46, 153, 0.5) 0%, rgba(27, 77, 255, 0.75) 100%);
+            border-image-slice: 1;
+            width: 55px;
+            height: 55px;
+            border-radius: 6px;
+        }
+        .dts{
+            margin-top: 0px;
+        }
+    }
+    .price_section{
+        margin-top: 70px;
+        .price_card{
+            transition: 0.2s all linear;
+            position: relative;
+            .price_back{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                bottom:0;
+                z-index: 1;
+                left: 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.2s all linear;
+            }
+            &:hover{
+                transform: scale(1.1) translateY(-10px);
+                .price_back{
+                    opacity: 1;
+                    visibility: visible;
+                }
+             
+            }
+        }
+    }
+    .list_item{
+        ul{
+            margin-bottom: 30px;
+            list-style: none;
+            li{
+                display: flex;
+                align-items: center;
+                gap:10px;
+                margin-bottom:10px;
+                &:last-child{
+                    margin-bottom:0px;
+                }
+                .icon_box{
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 100px;
+                    background:#fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: 0.2s all linear;
+                    svg{
+                        width: 12px;
+                        width: 12px;
+                    }
+                }
+                .text{
+                    margin-bottom: 0px;
+                    font-size: 15px;
+                }
+               
+            }
+        }
+    
+    }
+    .price_button{
+        background-color: transparent;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        padding: 12px;
+        text-decoration: none;
+        color:#fff;
+        position: relative;
+        transition: 0.2s all linear;
+        &:hover{
+            background-color: #1A222C;
+        }
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 6px;
+            padding: 2px; /* Adjust the padding for border thickness */
+            background: linear-gradient(180deg, rgba(16, 46, 153, 0.5) 0%, rgba(27, 77, 255, 0.75) 100%);
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+        }
+      
+    }
+    .tags{
+        font-size: 13px;
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border-radius: 2px;
+        padding: 0px 10px 2px 11px !important;
+    }
+    
+    .card-body{
+        position: relative;
+        z-index: 2;
+    }
+}
+// Tracking SASS Start
 
 
 

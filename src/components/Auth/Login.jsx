@@ -1,72 +1,107 @@
-"use client";
-import { FormGroup,Input,Label,Form , Row, Col, Button } from 'reactstrap';
-
-import React, { useState } from 'react';
+"use client"
+import { FormGroup, Input, Label, Form, Row, Col, Button } from 'reactstrap';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import '../../css/auth.scss';
+import { useRouter } from 'next/navigation'; // Use next/navigation in the App Router
+import { useContext } from "react"
+import { UserContext } from "@/context/UserContext"
 
-import Link from "next/link";
-import '../../css/auth.scss'
+export default function Auth_Login() {
+    const UserData = useContext(UserContext)
 
-export default function Auth_Login(){
-    const [state, setState] = useState(true);
+    const router = useRouter();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true); // Ensure this component is mounted on the client
+    }, []);
+
+    
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        // Send a POST request to the login API
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+        });
+    
+        const data = await res.json();
+    
+        if (res.ok) {
+          // Redirect to dashboard or any other page on successful login
+          router.push('/dashboard');
+          UserData.setUser(email)
+        } else {
+          setError(data.error);
+        }
+      };
+
+    
+
+    if (!isMounted) return null; // Avoid rendering until mounted on the client
 
     return (
         <>
             <div className="auth_pgs">
                 <div className="content">
-                    <div className="back_img" style={{background:"url(images/auth/login_back.png)"}} ></div>
+                    <div className="back_img" style={{ background: "url(images/auth/login_back.png)" }}></div>
                     <div className="form_content">
-                        <Form action="">
+                        <div className='white text-white' id="demo"></div>
+                        <Form onSubmit={handleSubmit}>
                             <Row className="justify-content-center">
                                 <Col md="4">
-                                    <h4 className='heading text-center' >Welcome Back</h4>
+                                    <h4 className='heading text-center'>Welcome Back</h4>
                                     <p className="py-2 m-0 sub_text text-center">Login into your account</p>
                                     <div className="border_lines text-center">
                                         <small className="p-0 m-0 small_text text-center">Or continue with</small>
                                     </div>
-                                    
+
                                     <div className="mt-4">
                                         <FormGroup className="form-groups">
                                             <Label htmlFor="">Email</Label>
-                                            <Input type="email" className='form-control' />
+                                            <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className='form-control' />
                                         </FormGroup>
                                         <FormGroup className="form-groups mb-0">
                                             <Label htmlFor="">Password</Label>
-                                            <Input type="password" className='form-control' />
+                                            <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className='form-control' />
                                         </FormGroup>
                                     </div>
 
                                     <div className="middle mt-2 d-flex justify-content-between align-items-center mb-3">
-                                    <FormGroup switch>
-                                        <Input
-                                        type="switch"
-                                        checked={state}
-                                        onClick={() => {
-                                            setState(!state);
-                                        }}
-                                        />
-                                    </FormGroup>
-                                        <Link className='link' href="#" >Recover Password</Link>
+                               
+                                        <Link className='link' href="#">Recover Password</Link>
                                     </div>
 
-                                    <Link href="/" className='btn auth_btn full_blue'>Login</Link>
+                                    <button className='btn auth_btn full_blue' type="submit">Login</button>
+                                   <span className="text-white white" > {error && <p>{error}</p>}</span>
 
                                     <div className="auth_footer text-center pt-3">
                                         <p className="p-0 m-0 text">
                                             Don’t have an account?
-                                            <Link href="/sign_up" className="link" > Sign up!</Link>
+                                            <Link href="/auth/sign_up" className="link"> Sign up!</Link>
                                         </p>
                                     </div>
-
                                 </Col>
                             </Row>
                         </Form>
                     </div>
                 </div>
                 <div className="side_image">
-                     <Image alt="" loading="lazy"src={"/itam/images/auth/login_side.png"} width={1000} height={1000}  />
+                    <Image alt="" loading="lazy" src="/itam/images/auth/login_side.png" width={1000} height={1000} />
                 </div>
             </div>
         </>
-    )
+    );
 }

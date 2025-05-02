@@ -26,7 +26,6 @@ export default function AddCustomField(props, args) {
       SetExternalLink((currentValue)=>{
           return [...currentValue,externalLinks]
       });
-      
   }
 
   const delelteExternalLink = (id)=>{

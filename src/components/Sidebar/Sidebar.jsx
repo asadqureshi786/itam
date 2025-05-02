@@ -1,9 +1,14 @@
 "use client";
-import { Nav, NavItem, NavLink } from "reactstrap";
+// import UserName from "@/components/UserName/UserName"
+import { Nav,Button, NavItem, NavLink } from "reactstrap";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import { useState } from "react";
+import { useRouter } from 'next/navigation'; // `next/navigation` is used in App Router
+
+// import { redirect } from 'next/navigation'
+
+
 import { usePathname } from "next/navigation";
 
 // Icons
@@ -12,6 +17,27 @@ import { usePathname } from "next/navigation";
 import "../../css/sidebar.scss";
 
 export default function Header() {
+  const router = useRouter()
+
+  const handleLogout = async () => {
+    try {
+      // Call the logout API route
+      const response = await fetch('/api/auth/logout', {
+        method: 'GET',
+      });
+
+      if (response.ok) {
+        // window.location.href = '/auth/login';
+        // redirect('/auth/login')
+
+        // Redirect to login page after successful logout
+        router.push('/auth/login');
+      }
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
+  
   const pathname = usePathname();
   return (
     <>
@@ -123,6 +149,58 @@ export default function Header() {
               </Link>
             </NavItem>
             <NavItem>
+              <Link
+                className={`item_link ${
+                  pathname == "/tracking" ? "active" : ""
+                } `}
+                href="/tracking"
+              >
+             
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 5V2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 22V19" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19 12H22" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M2 12H5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                Tracking{" "}
+                
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.5">
+<path d="M17 9H7C5.34315 9 4 10.3431 4 12V18C4 19.6569 5.34315 21 7 21H17C18.6569 21 20 19.6569 20 18V12C20 10.3431 18.6569 9 17 9Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 6V4.64C14.9974 4.20585 14.8237 3.79024 14.5168 3.48324C14.2098 3.17625 13.7941 3.00262 13.36 3H10.64C10.2059 3.00262 9.79024 3.17625 9.48324 3.48324C9.17625 3.79024 9.00262 4.20585 9 4.64V9H15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 17C13.1046 17 14 16.1046 14 15C14 13.8954 13.1046 13 12 13C10.8954 13 10 13.8954 10 15C10 16.1046 10.8954 17 12 17Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
+
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link
+                className={`item_link ${
+                  pathname == "/discover" ? "active" : ""
+                } `}
+                href="/discover"
+              >
+              
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.65007 8.52982L15.0001 7.26982C15.2374 7.2223 15.4828 7.23412 15.7145 7.30424C15.9462 7.37436 16.157 7.5006 16.3281 7.67176C16.4993 7.84293 16.6255 8.0537 16.6956 8.28538C16.7658 8.51706 16.7776 8.76247 16.7301 8.99982L15.4701 14.3098C15.4044 14.5814 15.2651 14.8296 15.0675 15.0272C14.8699 15.2248 14.6217 15.3641 14.3501 15.4298L9.00007 16.7298C8.76272 16.7773 8.51731 16.7655 8.28563 16.6954C8.05395 16.6253 7.84317 16.499 7.67201 16.3279C7.50085 16.1567 7.3746 15.9459 7.30448 15.7143C7.23436 15.4826 7.22254 15.2372 7.27007 14.9998L8.53007 9.64982C8.59577 9.37822 8.73506 9.12999 8.93265 8.93241C9.13024 8.73482 9.37847 8.59552 9.65007 8.52982Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M11.9999 13.3601C12.751 13.3601 13.3599 12.7512 13.3599 12.0001C13.3599 11.249 12.751 10.6401 11.9999 10.6401C11.2488 10.6401 10.6399 11.249 10.6399 12.0001C10.6399 12.7512 11.2488 13.3601 11.9999 13.3601Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10"/>
+<path d="M17 3H7C4.79086 3 3 4.79086 3 7V17C3 19.2091 4.79086 21 7 21H17C19.2091 21 21 19.2091 21 17V7C21 4.79086 19.2091 3 17 3Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10"/>
+</svg>
+                Discover{" "}
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.5">
+<path d="M17 9H7C5.34315 9 4 10.3431 4 12V18C4 19.6569 5.34315 21 7 21H17C18.6569 21 20 19.6569 20 18V12C20 10.3431 18.6569 9 17 9Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 6V4.64C14.9974 4.20585 14.8237 3.79024 14.5168 3.48324C14.2098 3.17625 13.7941 3.00262 13.36 3H10.64C10.2059 3.00262 9.79024 3.17625 9.48324 3.48324C9.17625 3.79024 9.00262 4.20585 9 4.64V9H15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 17C13.1046 17 14 16.1046 14 15C14 13.8954 13.1046 13 12 13C10.8954 13 10 13.8954 10 15C10 16.1046 10.8954 17 12 17Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>
+              </Link>
+            </NavItem>
+            <NavItem className="d-none" >
               <Link
                 className={`item_link ${
                   pathname == "/licenses" ? "active" : ""
@@ -356,11 +434,15 @@ export default function Header() {
               height={20}
             />
             <div className="intro">
-              <p className="text name m-0 p-0">Mike Millers</p>
+              <p className="text name m-0 p-0">
+                {/* Mike Millersasdas */}
+                {/* <UserName></UserName> */}
+                John Doe
+                </p>
               <p className="text designation m-0 p-0">Admin Account</p>
             </div>
           </div>
-          <Link href="/login">
+          <Link onClick={handleLogout} href="" >
             <div style={{ transform: "rotate(180deg)" }}>
               <svg
                 width="26px"

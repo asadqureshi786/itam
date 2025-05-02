@@ -12,7 +12,7 @@ header{
     top: 0;
     left: 0;
     margin-left: 290px;
-    z-index:1;
+    z-index:3;
     .header_search{
         top:50%;
         transform: translateY(-50%);
@@ -94,6 +94,36 @@ header{
             height:10px;
             border-radius: 100px;
             background: red;
+        }
+    }
+}
+
+.main_content.additions{
+    a{
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap:5px;
+        span{
+            color: #8897AE;
+            font-size: 14px;
+        }
+    }
+    .text{
+        color:#8897AE!important;
+    }
+    .dropdown-menu{
+        min-width:140px!important;
+    }
+    .shortCutButton{
+        color: white;
+        border: 1px solid $primary_color;
+        background-color: $primary_color;
+        padding: 4px 10px;
+        border-radius: 6px;
+        .text{
+            color:#fff!important;
+            font-size: 13px;
         }
     }
 }

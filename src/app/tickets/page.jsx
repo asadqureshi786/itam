@@ -62,7 +62,7 @@ export default function Tickets(){
         <p className="light small p-0 m-0">Issue explanation </p>
       </div>,
         type : <div className="tag_name">
-            <span className="span">Complain</span>
+            <span className="span">Procurement</span>
         </div>,
         status :  <div className="select_icon" >
           <select name="" className="form-control" id="">
@@ -139,7 +139,7 @@ export default function Tickets(){
         <p className="light small p-0 m-0">Issue explanation </p>
       </div>,
         type : <div className="tag_name">
-            <span className="span">Complain</span>
+            <span className="span">Maintenance</span>
         </div>,
         status :  <div className="select_icon" >
           <select name="" className="form-control" id="">
@@ -216,7 +216,7 @@ export default function Tickets(){
         <p className="light small p-0 m-0">Issue explanation </p>
       </div>,
         type : <div className="tag_name">
-            <span className="span">Complain</span>
+            <span className="span">Incident</span>
         </div>,
         status :  <div className="select_icon" >
           <select name="" className="form-control" id="">

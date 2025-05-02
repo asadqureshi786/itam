@@ -86,7 +86,7 @@ export default function Add_License() {
                     </Col>
                     <Col md="9">
                       <div className="custom_form">
-                        <h6 className="heading">License Essentials</h6>
+                        <h6 className="heading">Profile Details</h6>
                         <Row>
                           <Col md="6">
                             <FormGroup className="form-groups">

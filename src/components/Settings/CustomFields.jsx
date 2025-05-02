@@ -1,6 +1,7 @@
 import {Input, Row, Col} from 'reactstrap';
 import CustomTable from "@/components/Tables/CustomTable";
 import AddCustomField from "@/components/Settings/AddCustomField";
+import AddTicketCategory from "@/components/Settings/AddTicketCategory"
 
 // Use Icons
 
@@ -22,6 +23,9 @@ export default function CustomFields(){
     },
     {
       name :  <AddCustomField tdName="Asset Types"/>,
+    },
+    {
+      name :  <AddTicketCategory tdName="Ticket Categories"/>,
     },
   ]
 

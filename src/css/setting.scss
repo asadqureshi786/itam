@@ -90,4 +90,24 @@
             padding-bottom:18px!important;
         }
     }
+    .ld_adp{
+        input[type = "checkbox"]{
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+        .sub_text{
+            color:#8897AE;
+            font-size: 12px;
+        }
+        .select_check{
+            display:flex;
+            align-items: start;
+            gap:5px;
+            flex-direction: column;
+            input{
+                margin-top: 0px;
+            }
+        }
+    }
 }
